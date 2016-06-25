@@ -115,6 +115,14 @@ static CGFloat const kSwipeOffset = 100;
 }
 
 #pragma mark - Utilities
+- (UIScrollView *)scrollView {
+    return self.focusViewController.scrollView;
+}
+
+- (UIImageView *)mainImageView {
+    return self.focusViewController.mainImageView;
+}
+
 // Taken from https://github.com/rs/SDWebImage/blob/master/SDWebImage/SDWebImageDecoder.m
 - (UIImage *)decodedImageWithImage:(UIImage *)image
 {

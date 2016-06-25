@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class ASMediaFocusManager;
+@class ASImageScrollView;
 
 @protocol ASMediasFocusDelegate <NSObject>
 
@@ -65,6 +66,8 @@
 // Controller used to show custom accessories. If none is specified a default controller is used with a simple close button.
 @property (nonatomic, strong) UIViewController *topAccessoryController;
 
+@property (nonatomic, strong) ASImageScrollView *scrollView;
+@property (nonatomic, strong) UIImageView *mainImageView;
 // Install focusing gesture on the specified array of views.
 - (void)installOnViews:(NSArray *)views;
 // Install focusing gesture on the specified view.

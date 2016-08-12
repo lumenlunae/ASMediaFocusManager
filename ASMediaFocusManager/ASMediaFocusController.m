@@ -347,7 +347,12 @@ static CGFloat const kDefaultControlMargin = 5;
     frame.origin.y =  titleFrame.origin.y - frame.size.height - self.controlMargin;
     if(videoFrame.size.width > 0)
     {
-        frame.origin.y = MIN(frame.origin.y, CGRectGetMaxY(videoFrame) - frame.size.height - self.controlMargin);
+        CGFloat playerY = CGRectGetMinY(self.mainImageView.frame) - frame.size.height;
+        if (playerY > 60) {
+            frame.origin.y = playerY;
+        } else {
+            frame.origin.y = 60;
+        }
     }
     self.controlView.frame = frame;
 }
